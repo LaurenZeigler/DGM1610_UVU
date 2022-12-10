@@ -22,8 +22,8 @@ public class DetectCollision : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         explosionParticle.Play();
-        explosionParticle.Stop();
-
+        // explosionParticle.Stop();
+        
         scoreManager.IncreaseScore(scoreToGive); // Increase Score
         Destroy(other.gameObject); //destroy other game object it hits 
         Destroy(gameObject); //destroy this object

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1049565436762998083}
   - component: {fileID: 5255946264857498746}
   - component: {fileID: 838457464929634102}
+  - component: {fileID: 2088930136314766003}
   m_Layer: 0
   m_Name: LazerBolt
   m_TagString: Untagged
@@ -192,3 +193,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2088930136314766003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118918483286295963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11f4dbf454361a48b9d03d317d236ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: 30
+  lowerBounds: -10
+  scoreManager: {fileID: 0}
