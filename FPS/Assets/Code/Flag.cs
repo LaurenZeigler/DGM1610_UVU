@@ -21,7 +21,7 @@ public class Flag : MonoBehaviour
         if(other.CompareTag("Player")) //added if statement w tylers
         {
             gm.hasFlag = true; // Get the flag and set bool to true
-            rend.enable = false; // Hide flag when held
+            rend.enabled = false; // Hide flag when held
         }
     }
 }

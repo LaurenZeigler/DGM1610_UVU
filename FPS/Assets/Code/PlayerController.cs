@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
     private Rigidbody rb; //Rigidbody
 
-    private Weapon weapon;
+    //private Weapon weapon;
 
     /*
     
@@ -52,7 +52,10 @@ public class PlayerController : MonoBehaviour
     // Awake is before the start function
     void Awake()
     {
+        curHp = maxHp;
         // Get component
+        theCamera = Camera.main;
+        rb = GetComponent<Rigidbody>();
         //? theCamera = Camera.main;
         //? rb = GetComponent<Rigidbody>();
         //weapon = GetComponent<Weapon>();
@@ -60,8 +63,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //Get components
-        CameraLook = Camera.main;
-        rb = GetComponent<Rigidbody>();
 
         /* // Initialize the UI
         GameUI.instance.UpdateHealthBar(curHp, maxHp);

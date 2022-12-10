@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
     {
         if (flagPlaced)
         {
-
+            Debug.Log("The player has placed a flag!");
+            //---------AddScore();
         }
 
         if (Input.GetButtonDown("Cancel"))
@@ -52,15 +53,38 @@ public class GameManager : MonoBehaviour
         gamePaused = !gamePaused;
         Time.timeScale = gamePaused == true ? 0.0f : 1.0f;
 
-        //Toggle the pause menu with the curser
-        GameUI.instance.TogglePauseMenu(gamePaused);
-        Curser.lockState = gamePaused == true ? CursorLockMode.None : CurserLockMode.Locked;
-
+        //Toggle the pause menu with the cursor
+        //GameUI.instance.TogglePauseMenu(gamePaused);
+        Cursor.lockState = gamePaused == true ? CursorLockMode.None : CursorLockMode.Locked;
     }
-
+    
     public void PlaceFlag()
     {
         flagPlaced = true;
     }
+
+    public void AddScore(int scoreToAdd)
+    {
+        curScore += scoreToAdd;
+
+        //Update score text
+        //GameUI.instance.UpdateScoretext(curScore);
+
+        //If enough points, win
+        if (curScore >= scoreToWin)
+            WinGame();
+    }
+
+    void WinGame()
+    {
+        Debug.Log("The player has won the game!");
+        Time.timeScale = 0; //Freeze the game
+
+        //Show win screen
+        //GameUI.instance.SetEndGameScreen(true, curScore);
+    }
+
+
+
 
 }

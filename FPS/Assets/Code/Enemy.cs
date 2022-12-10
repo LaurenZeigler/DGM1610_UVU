@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     private List<Vector3> path;
 
     // Enemy Weapon
-    private Weapon weapon;
+    //private Weapon weapon;
 
     // Target to follow
     private GameObject target;
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         // Get the components
         //weapon = GetComponent<Weapon>();
         target = FindObjectOfType<PlayerController>().gameObject; GameObject.Find("Player");
-        invokeRepeating("UpdatePath", 0.0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0.0f, 0.5f);
 
         curHp = maxHp;
     }
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         //Calculate a path to the target
         NavMeshPath navMeshPath = new NavMeshPath();
-        navMeshPath.CaclulatePath(transform.position, target.transform.position, navMesh.AllAreas, navMeshPath);
+        NavMesh.CalculatePath(transform.position, target.transform.position, NavMesh.AllAreas, navMeshPath);
 
         path = navMeshPath.corners.ToList();
     }
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         //Look at the Target
         Vector3 dir = (target.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        transform.eurlerAngles = Vector3.up * angle;
+        transform.eulerAngles = Vector3.up * angle;
 
         // Calculate the distance between this enemy and the player
         float dist = Vector3.Distance(transform.position, target.transform.position);

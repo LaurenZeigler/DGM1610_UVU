@@ -25,7 +25,7 @@ public class HomeBase : MonoBehaviour
         {
             Debug.Log("Player has reached home base with the flag!");
             gm.PlaceFlag(); // Run placeflag from < GameManager > script
-            flagRend.enable = true; // Make the flag visable to player
+            flagRend.enabled = true; // Make the flag visable to player
         }
     }
 }
