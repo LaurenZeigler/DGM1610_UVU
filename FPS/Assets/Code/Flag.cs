@@ -18,8 +18,9 @@ public class Flag : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")) //added if statement w tylers
+        if(other.gameObject.CompareTag("Player"))
         {
+            Destroy(other.gameObject);
             gm.hasFlag = true; // Get the flag and set bool to true
             rend.enabled = false; // Hide flag when held
         }

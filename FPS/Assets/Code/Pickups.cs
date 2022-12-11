@@ -38,7 +38,7 @@ public class Pickups : MonoBehaviour
         {
             PlayerController player = other.GetComponent<PlayerController>();
 
-            switch(type)
+            /*switch(type)
             {
                 case PickupType.Health:
                     player.GiveHealth(healthAmount);
@@ -51,7 +51,7 @@ public class Pickups : MonoBehaviour
                 default:
                     print("Type not accepted");
                     break;
-            }
+            }*/
             //Reference Audio Source to play sound effect
             //other.GetComponent<AudioSource>.PlayOneShot(pickupSFX);
 

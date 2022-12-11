@@ -23,13 +23,18 @@ public class Enemy : MonoBehaviour
     // Target to follow
     private GameObject target;
 
+    private PlayerController player;
+
 
     // Start is called before the first frame update
     void Start()
     {
         // Get the components
         //weapon = GetComponent<Weapon>();
-        target = FindObjectOfType<PlayerController>().gameObject; GameObject.Find("Player");
+        target = FindObjectOfType<PlayerController>().gameObject;
+
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
 
         curHp = maxHp;
@@ -84,6 +89,7 @@ public class Enemy : MonoBehaviour
         // If within attack range, shoot player
         if(dist <= attackRange)
         {
+            player.TakeDamage(1);
             /*if (weapon.CanShoot())
                 weapon.Shoot();*/
         }
