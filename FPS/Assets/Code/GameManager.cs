@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +37,8 @@ public class GameManager : MonoBehaviour
     {
         if (flagPlaced)
         {
-            Debug.Log("The player has placed a flag!");
             //---------AddScore();
+            WinGame();
         }
 
         if (Input.GetButtonDown("Cancel"))
@@ -78,13 +77,9 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         Debug.Log("The player has won the game!");
-        Time.timeScale = 0; //Freeze the game
+        //Time.timeScale = 0; //Freeze the game
 
         //Show win screen
         //GameUI.instance.SetEndGameScreen(true, curScore);
     }
-
-
-
-
 }
